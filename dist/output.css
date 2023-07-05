@@ -635,6 +635,30 @@ video {
   width: 18rem;
 }
 
+.w-7 {
+  width: 1.75rem;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[300px\] {
+  width: 300px;
+}
+
+.w-\[310px\] {
+  width: 310px;
+}
+
+.w-\[315px\] {
+  width: 315px;
+}
+
+.w-\[320px\] {
+  width: 320px;
+}
+
 .max-w-lg {
   max-width: 32rem;
 }
