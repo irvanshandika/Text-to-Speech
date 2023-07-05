@@ -8,20 +8,23 @@
     <link rel="stylesheet" href="./dist/output.css" />
   </head>
   <body>
-    <div class="flex justify-center items-center">
-      <div class="mt-7">
-        <div class="relative">
-          <div class="h-10 w-80 bg-gray-200 rounded-sm overflow-hidden">
-            <div class="h-full w-1 bg-blue-500"></div>
-          </div>
-          <p id="typed-text" class="absolute left-0 top-0 text-lg text-blue-500 font-medium mt-2 ml-2"></p>
+    <div class="flex flex-col items-center mt-7">
+      <div class="relative mb-4">
+        <div class="h-10 w-80 lg:w-96 bg-gray-200 rounded-sm overflow-hidden">
+          <div class="h-full w-1 bg-blue-500"></div>
         </div>
+        <p id="typed-text" class="absolute left-0 top-0 text-lg text-blue-500 font-medium mt-2 ml-2"></p>
       </div>
-    </div>
 
-    <div class="flex justify-center items-center">
-      <div class="mt-7">
-        <input id="message" type="text" class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white border-solid mr-7 px-4 py-1 rounded-sm lg:w-52 w-48" placeholder="Type your message" />
+      <div class="flex flex-col items-center">
+        <select id="language" class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white border-solid mb-3 px-3 py-1 lg:w-96 w-72 rounded-sm">
+          <option value="id">Bahasa Indonesia</option>
+          <option value="en">English</option>
+          <option value="zh">中文</option>
+          <option value="ko">한국어</option>
+          <option value="ja">日本語</option>
+        </select>
+        <input id="message" type="text" class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white border-solid mb-3 px-3 py-1 rounded-sm w-full lg:max-w-lg" placeholder="Type your message" />
         <button onclick="playSpeech()" class="bg-blue-500 hover:bg-blue-400 px-8 py-1 rounded-sm text-white">Play</button>
       </div>
     </div>
