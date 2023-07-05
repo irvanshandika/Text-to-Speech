@@ -6,6 +6,8 @@
     <title>Virtual Speech</title>
     <link rel="stylesheet" href="./src/style/style.css" />
     <link rel="stylesheet" href="./dist/output.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
   <body>
     <div class="flex flex-col items-center mt-7">
@@ -17,15 +19,17 @@
       </div>
 
       <div class="flex flex-col items-center">
-        <select id="language" class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white border-solid mb-3 px-3 py-1 lg:w-96 w-[320px] rounded-sm">
+        <select id="language" class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white font-Quicksand border-solid mb-3 px-3 py-1 lg:w-96 w-[320px] rounded-sm">
           <option value="id">Bahasa Indonesia</option>
           <option value="en">English</option>
           <option value="zh">中文</option>
           <option value="ko">한국어</option>
           <option value="ja">日本語</option>
         </select>
-        <input id="message" type="text" class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white border-solid mb-3 px-3 py-1 rounded-sm w-full lg:max-w-lg" placeholder="Type your message" />
-        <button onclick="playSpeech()" class="bg-blue-500 hover:bg-blue-400 px-8 py-1 rounded-sm text-white">Play</button>
+        <input id="message" type="text" class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white border-solid mb-3 px-3 py-1 rounded-sm w-full lg:max-w-lg font-Quicksand" placeholder="Type your message" />
+        <button onclick="playSpeech()" class="bg-blue-500 hover:bg-blue-400 px-10 py-2 rounded-sm text-white">
+          Play <span class="ml-2"><i class="fa-sharp fa-solid fa-play"></i></span>
+        </button>
       </div>
     </div>
 

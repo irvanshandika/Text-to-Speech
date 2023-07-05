@@ -5,7 +5,11 @@ module.exports = {
     "./src/**/*.{html,js}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "Quicksand" : ['quicksand', 'sans-serif']
+      }
+    },
   },
   plugins: [],
 }
