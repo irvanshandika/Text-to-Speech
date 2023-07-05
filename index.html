@@ -4,12 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Virtual Speech</title>
-    <link rel="stylesheet" href="./assets/style/style.css" />
+    <link rel="stylesheet" href="./src/style/style.css" />
+    <link rel="stylesheet" href="./dist/output.css" />
   </head>
   <body>
-    <input id="message" type="text" />
-    <button onclick="playSpeech()">Play</button>
+    <div class="flex justify-center items-center">
+      <div class="mt-7">
+        <div class="relative">
+          <div class="h-10 w-80 bg-gray-200 rounded-sm overflow-hidden">
+            <div class="h-full w-1 bg-blue-500"></div>
+          </div>
+          <p id="typed-text" class="absolute left-0 top-0 text-lg text-blue-500 font-medium mt-2 ml-2"></p>
+        </div>
+      </div>
+    </div>
 
-    <script src="./assets/script/index.js"></script>
+    <div class="flex justify-center items-center">
+      <div class="mt-7">
+        <input id="message" type="text" class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white border-solid mr-7 px-4 py-1 rounded-sm" placeholder="Type your message" />
+        <button onclick="playSpeech()" class="bg-blue-500 hover:bg-blue-400 px-8 py-1 rounded-sm text-white">Play</button>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./src/script/index.js"></script>
   </body>
 </html>
