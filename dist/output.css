@@ -603,6 +603,10 @@ video {
   width: 20rem;
 }
 
+.w-40 {
+  width: 10rem;
+}
+
 .max-w-lg {
   max-width: 32rem;
 }
@@ -748,4 +752,40 @@ video {
 .hover\:bg-blue-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 640px) {
+  .sm\:w-8 {
+    width: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:w-8 {
+    width: 2rem;
+  }
+
+  .lg\:w-full {
+    width: 100%;
+  }
+
+  .lg\:w-28 {
+    width: 7rem;
+  }
+
+  .lg\:w-36 {
+    width: 9rem;
+  }
+
+  .lg\:w-48 {
+    width: 12rem;
+  }
+
+  .lg\:w-4 {
+    width: 1rem;
+  }
+
+  .lg\:w-52 {
+    width: 13rem;
+  }
 }
