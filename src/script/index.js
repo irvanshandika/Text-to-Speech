@@ -11,6 +11,7 @@ function playSpeech() {
   window.speechSynthesis.speak(speech);
 }
 
+// Select language
 var textToType = ["Selamat Datang Di Virtual Speech", "Welcome to Virtual Speech", "Semoga Harimu Menyenangkan!", "Have a Nice Day!"];
 var currentTextIndex = 0;
 var typedText = "";
@@ -29,3 +30,51 @@ function typeText() {
 $(document).ready(function () {
   typeText();
 });
+
+// Generate kalimat
+function generateKalimat() {
+  var bahasa = document.getElementById("bahasa").value;
+  var kata1, kata2, kata3, kata4;
+
+  switch (bahasa) {
+    case "indonesia":
+      kata1 = ["Saya", "Anda", "Mereka", "Kami"];
+      kata2 = ["sangat senang", "terkejut", "bahagia", "sangat sedih"];
+      kata3 = ["melihat", "mendengar", "merasakan", "menemui"];
+      kata4 = ["pemandangan indah", "berita gembira", "kejutan besar", "kesedihan yang mendalam"];
+      break;
+    case "english":
+      kata1 = ["I", "You", "They", "We"];
+      kata2 = ["am very happy", "am surprised", "am very sad"];
+      kata3 = ["see", "hear", "feel", "meet"];
+      kata4 = ["a beautiful scenery", "great news", "a big surprise", "deep sadness"];
+      break;
+    case "chinese":
+      kata1 = ["我", "你", "他们", "我们"];
+      kata2 = ["非常高兴", "很惊讶", "非常伤心"];
+      kata3 = ["看到", "听到", "感受到", "见到"];
+      kata4 = ["美丽的风景", "好消息", "一个大惊喜", "深深的悲伤"];
+      break;
+    case "korean":
+      kata1 = ["나는", "당신은", "그들은", "우리는"];
+      kata2 = ["매우 행복합니다", "놀랐어요", "매우 슬퍼요"];
+      kata3 = ["본다", "들었다", "느꼈다", "만났다"];
+      kata4 = ["아름다운 풍경을", "좋은 소식을", "큰 놀람을", "깊은 슬픔을"];
+      break;
+    case "japanese":
+      kata1 = ["私は", "あなたは", "彼らは", "私たちは"];
+      kata2 = ["とても嬉しいです", "驚きました", "とても悲しいです"];
+      kata3 = ["見る", "聞く", "感じる", "出会う"];
+      kata4 = ["美しい景色を", "素晴らしいニュースを", "大きな驚きを", "深い悲しみを"];
+      break;
+  }
+
+  var randomKata1 = kata1[Math.floor(Math.random() * kata1.length)];
+  var randomKata2 = kata2[Math.floor(Math.random() * kata2.length)];
+  var randomKata3 = kata3[Math.floor(Math.random() * kata3.length)];
+  var randomKata4 = kata4[Math.floor(Math.random() * kata4.length)];
+
+  var kalimat = randomKata1 + " " + randomKata2 + " " + randomKata3 + " " + randomKata4;
+  var outputElement = document.getElementById("output");
+  outputElement.innerHTML = kalimat;
+}

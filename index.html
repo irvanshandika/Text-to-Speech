@@ -19,18 +19,32 @@
       </div>
 
       <div class="flex flex-col items-center">
-        <select id="language" class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white font-Quicksand border-solid mb-3 px-3 py-1 lg:w-96 w-[320px] rounded-sm" onchange="changeLanguage()">
+        <select id="language" class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white font-Quicksand border-solid mb-3 px-3 py-2 lg:w-96 w-[320px] rounded-sm" onchange="changeLanguage()">
           <option value="id">Bahasa Indonesia</option>
           <option value="en">English</option>
           <option value="zh">中文</option>
           <option value="ko">한국어</option>
           <option value="ja">日本語</option>
         </select>
-        <input id="message" type="text" class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white border-solid mb-3 px-3 py-1 rounded-sm w-full lg:max-w-lg font-Quicksand" placeholder="Type your message" />
+        <input id="message" type="text" class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white border-solid mb-3 px-3 py-2 rounded-sm w-full lg:max-w-lg font-Quicksand" placeholder="Type your message" />
         <button onclick="playSpeech()" class="bg-blue-500 hover:bg-blue-400 px-10 py-2 rounded-sm text-white">
           Play <span class="ml-2"><i class="fa-sharp fa-solid fa-play"></i></span>
         </button>
       </div>
+      <a href="#" class="bg-orange-500 hover:bg-orange-400 text-white mt-3 px-10 py-2 rounded-sm"
+        >Help <span class="ml-2"><i class="fa-solid fa-question"></i></span
+      ></a>
+      <div class="flex gap-2 mb-4 mt-7">
+        <select id="bahasa" class="custom-select bg-[#068FFF] hover:bg-[#78C1F3] text-white border-black px-3 py-1 rounded-sm border-2">
+            <option value="indonesia">Bahasa Indonesia</option>
+            <option value="english">English</option>
+            <option value="chinese">中文</option>
+            <option value="korean">한국어</option>
+            <option value="japanese">日本語</option>
+        </select>
+        <button onclick="generateKalimat()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Generate</button>
+    </div>
+    <p id="output" class="text-lg">Hasil Generate Akan Ditampilkan Disini</p>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
