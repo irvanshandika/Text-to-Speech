@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Tambahkan gaya untuk dark mode */
+.dark-mode {
+  background-color: #1a202c;
+  color: #e2e8f0;
+}
+
+.dark-mode button {
+  background-color: #4a5568;
+}
+
+/* Tambahkan gaya untuk mode sistem */
+@media (prefers-color-scheme: dark) {
+  .system-mode {
+    background-color: #1a202c;
+    color: #e2e8f0;
+  }
+
+  .system-mode button {
+    background-color: #4a5568;
+  }
+}
