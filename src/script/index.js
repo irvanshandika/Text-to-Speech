@@ -11,8 +11,8 @@ function playSpeech() {
   window.speechSynthesis.speak(speech);
 }
 
-// Select language
-var textToType = ["Selamat Datang Di Virtual Speech", "Welcome to Virtual Speech", "Semoga Harimu Menyenangkan!", "Have a Nice Day!"];
+// Typing Text
+var textToType = ["Selamat Datang Di Virtual Speech", "Welcome to Virtual Speech", "Semoga Hari Mu Menyenangkan!", "Have a Nice Day!"];
 var currentTextIndex = 0;
 var typedText = "";
 
