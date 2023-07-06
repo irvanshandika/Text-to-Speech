@@ -20,10 +20,10 @@
     <meta name="twitter:description" content="Ubah Text Yang Kamu Inginkan Menjadi Suara Secara Virtual Untuk Membantu Kamu Belajar Aksen Dari Berbagai Bahasa" />
     <meta name="twitter:image" content="" />
     <title>Virtual Speech: Ubah Text Mu Menjadi Suara Virtual</title>
-    <link rel="stylesheet" href="./src/style/style.css" />
-    <link rel="stylesheet" href="./dist/output.css" />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="./src/style/style.css" />
+    <link rel="stylesheet" href="./dist/output.css" />
   </head>
   <body id="content">
     <div class="flex flex-col items-center mt-7">
@@ -36,6 +36,7 @@
 
       <div class="flex flex-col items-center">
         <select id="language" class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white font-Quicksand border-solid mb-3 px-3 py-2 lg:w-96 w-[320px] rounded-sm" onchange="changeLanguage()">
+          <option>Pilih Bahasa</option>
           <option value="id">Bahasa Indonesia</option>
           <option value="en">English</option>
           <option value="zh">中文</option>
@@ -47,43 +48,6 @@
           Play <span class="ml-2"><i class="fa-sharp fa-solid fa-play"></i></span>
         </button>
       </div>
-      <button id="helpBtn" class="bg-orange-500 hover:bg-orange-400 text-white mt-3 px-7 py-2 rounded-sm">
-        Bantuan <span class="ml-2"><i class="fa-solid fa-question"></i></span>
-      </button>
-      <!-- Modal -->
-      <!-- Main modal -->
-      <div id="modalHelp" class="fixed top-0 left-0 right-0 z-50 w-full hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-        <div class="flex items-center justify-center w-full h-screen">
-          <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 w-full max-w-2xl">
-            <!-- Modal content -->
-            <div class="relative">
-              <!-- Modal header -->
-              <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Terms of Service</h3>
-              </div>
-              <!-- Modal body -->
-              <div class="p-6 space-y-6">
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                  With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-                </p>
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                  The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as
-                  possible of high-risk data breaches that could personally affect them.
-                </p>
-              </div>
-              <!-- Modal footer -->
-              <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                <span
-                  class="close cursor-pointer text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                  Mengerti
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Akhir Modal -->
       <div class="flex gap-2 mb-4 mt-7">
         <select id="bahasa" class="custom-select bg-[#068FFF] hover:bg-[#78C1F3] text-white px-3 py-1 rounded-sm">
           <option value="">Pilih Bahasa</option>
@@ -95,17 +59,14 @@
         </select>
         <button onclick="generateKalimat()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Generate</button>
       </div>
-      <p id="output" class="lg:text-lg text-sm">Hasil Generate Akan Ditampilkan Disini</p>
+      <input
+        type="text"
+        id="output"
+        readonly
+        class="mt-4 py-2 px-4 w-64 text-black bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+        placeholder="Hasil Generate Akan Ditampilkan Disini" />
+      <button onclick="copyKalimat()" class="py-2 px-4 mt-3 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">Copy</button>
       <!-- Switch mode -->
-      <!-- <div class="container mx-auto px-4 py-8">
-        <h1 class="text-3xl mb-4">Mode Pilihannya:</h1>
-        <div class="flex justify-between items-center">
-          <button id="lightModeBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Light Mode</button>
-          <button id="darkModeBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Dark Mode</button>
-          <button id="systemModeBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Mode Sistem</button>
-        </div>
-      </div> -->
-
       <div class="inline-flex rounded-md shadow-sm mt-7" role="group">
         <button
           id="lightModeBtn"

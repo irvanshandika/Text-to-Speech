@@ -75,29 +75,21 @@ function generateKalimat() {
   var randomKata4 = kata4[Math.floor(Math.random() * kata4.length)];
 
   var kalimat = randomKata1 + " " + randomKata2 + " " + randomKata3 + " " + randomKata4;
-  var outputElement = document.getElementById("output");
+  document.getElementById("output").value = kalimat;
   outputElement.innerHTML = kalimat;
 }
 
-// Modal
-var modal = document.getElementById("modalHelp");
-var btn = document.getElementById("helpBtn");
-var span = document.getElementsByClassName("close")[0];
+function copyKalimat() {
+  var resultInput = document.getElementById("output");
 
-btn.onclick = function () {
-  modal.style.display = "block";
-};
+  // Salin teks dari input ke clipboard
+  resultInput.select();
+  resultInput.setSelectionRange(0, 99999);
+  document.execCommand("copy");
 
-span.onclick = function () {
-  modal.style.display = "none";
-};
-
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-
+  // Beri tahu pengguna bahwa teks berhasil disalin
+  alert("Kalimat berhasil disalin: " + resultInput.value);
+}
 // Switch mode
 const lightModeBtn = document.getElementById("lightModeBtn");
 const darkModeBtn = document.getElementById("darkModeBtn");
