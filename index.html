@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Virtual Speech</title>
+    <title>Virtual Speech: Ubah Text Mu Menjadi Suara Virtual</title>
     <link rel="stylesheet" href="./src/style/style.css" />
     <link rel="stylesheet" href="./dist/output.css" />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet" />
@@ -35,16 +35,16 @@
         >Help <span class="ml-2"><i class="fa-solid fa-question"></i></span
       ></a>
       <div class="flex gap-2 mb-4 mt-7">
-        <select id="bahasa" class="custom-select bg-[#068FFF] hover:bg-[#78C1F3] text-white border-black px-3 py-1 rounded-sm border-2">
-            <option value="indonesia">Bahasa Indonesia</option>
-            <option value="english">English</option>
-            <option value="chinese">中文</option>
-            <option value="korean">한국어</option>
-            <option value="japanese">日本語</option>
+        <select id="bahasa" class="custom-select bg-[#068FFF] hover:bg-[#78C1F3] text-white px-3 py-1 rounded-sm">
+          <option value="indonesia">Bahasa Indonesia</option>
+          <option value="english">English</option>
+          <option value="chinese">中文</option>
+          <option value="korean">한국어</option>
+          <option value="japanese">日本語</option>
         </select>
         <button onclick="generateKalimat()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Generate</button>
-    </div>
-    <p id="output" class="text-lg">Hasil Generate Akan Ditampilkan Disini</p>
+      </div>
+      <p id="output" class="text-lg">Hasil Generate Akan Ditampilkan Disini</p>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
