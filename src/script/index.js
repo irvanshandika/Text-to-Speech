@@ -99,8 +99,12 @@ function copyKalimat() {
   resultInput.setSelectionRange(0, 99999);
   document.execCommand("copy");
 
-  // Beri tahu pengguna bahwa teks berhasil disalin
-  alert("Kalimat berhasil disalin: " + resultInput.value);
+  // Tampilkan alert
+  var alertDiv = document.getElementById("alert");
+  alertDiv.classList.remove("hidden");
+  setTimeout(function () {
+    alertDiv.classList.add("hidden");
+  }, 4000);
 }
 // Switch mode
 const lightModeBtn = document.getElementById("lightModeBtn");
