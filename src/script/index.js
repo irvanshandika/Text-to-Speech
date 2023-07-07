@@ -67,6 +67,18 @@ function generateKalimat() {
       kata3 = ["見る", "聞く", "感じる", "出会う"];
       kata4 = ["美しい景色を", "素晴らしいニュースを", "大きな驚きを", "深い悲しみを"];
       break;
+    case "français":
+      kata1 = ["je", "vous", "ils", "nous"];
+      kata2 = ["très heureux", "surpris", "heureux", "très triste"];
+      kata3 = ["voir", "entendre", "sentir", "rencontrer"];
+      kata4 = ["beau paysage", "nouvelles joyeuses", "grande surprise", "profonde tristesse"];
+      break;
+    case "deutsch":
+      kata1 = ["ich", "ihr", "sie", "wir"];
+      kata2 = ["sehr glücklich", "überrascht", "glücklich", "sehr traurig"];
+      kata3 = ["sehen", "hören", "riechen", "treffen"];
+      kata4 = ["schöne Landschaft", "freudige Nachrichten", "große Überraschung", "tiefe Traurigkeit"];
+      break;
   }
 
   var randomKata1 = kata1[Math.floor(Math.random() * kata1.length)];

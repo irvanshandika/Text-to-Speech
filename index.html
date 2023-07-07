@@ -39,33 +39,39 @@
           <option>Pilih Bahasa</option>
           <option value="id">Bahasa Indonesia</option>
           <option value="en">English</option>
-          <option value="zh">中文</option>
-          <option value="ko">한국어</option>
-          <option value="ja">日本語</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+          <option value="zh">中文 (China)</option>
+          <option value="ko">한국어 (Korea)</option>
+          <option value="ja">日本語 (Japan)</option>
         </select>
         <input id="message" type="text" class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white border-solid mb-3 px-3 py-2 rounded-sm w-full lg:max-w-lg font-Quicksand" placeholder="Type your message" />
-        <button onclick="playSpeech()" class="bg-blue-500 hover:bg-blue-400 px-10 py-2 rounded-sm text-white">
+        <button onclick="playSpeech()" class="bg-blue-500 hover:bg-blue-400 px-10 py-2 rounded-sm text-white mt-3">
           Play <span class="ml-2"><i class="fa-sharp fa-solid fa-play"></i></span>
         </button>
       </div>
       <div class="flex gap-2 mb-4 mt-7">
         <select id="bahasa" class="custom-select bg-[#068FFF] hover:bg-[#78C1F3] text-white px-3 py-1 rounded-sm lg:w-[280px] w-[216px]">
           <option value="">Pilih Bahasa</option>
-          <option value="indonesia">Bahasa Indonesia</option>
+          <option value="indonesia">Indonesia</option>
           <option value="english">English</option>
+          <option value="français">Français</option>
+          <option value="deutsch">Deutsch</option>
           <option value="chinese">中文</option>
           <option value="korean">한국어</option>
           <option value="japanese">日本語</option>
         </select>
         <button onclick="generateKalimat()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Generate</button>
       </div>
-      <input
-        type="text"
-        id="output"
-        readonly
-        class="mt-4 py-2 px-4 w-64 text-black bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-        placeholder="Hasil Generate Akan Ditampilkan Disini" />
-      <button onclick="copyKalimat()" class="py-2 px-4 mt-3 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">Copy</button>
+      <div class="flex-row">
+        <input
+          type="text"
+          id="output"
+          readonly
+          class="mt-4 py-2 px-4 w-64 lg:w-80 text-black bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+          placeholder="Hasil Generate Akan Ditampilkan Disini" />
+        <button onclick="copyKalimat()" class="py-2 px-4 mt-3 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">Copy</button>
+      </div>
       <!-- Switch mode -->
       <div class="inline-flex rounded-md shadow-sm mt-7" role="group">
         <button
