@@ -12,7 +12,16 @@ function playSpeech() {
 }
 
 // Typing Text
-var textToType = ["Selamat Datang Di Virtual Speech", "Welcome to Virtual Speech", "Semoga Hari Mu Menyenangkan!", "Have a Nice Day!"];
+var textToType = [
+  "Selamat Datang Di Virtual Speech",
+  "Websitenya Untuk Mengubah Teks Menjadi Virtual Speech",
+  "Welcome to Virtual Speech",
+  "A Website for Converting Text into Virtual Speech",
+  "Gunakanlah Website Ini Dengan Sebijaknya!",
+  "Use these websites wisely!",
+  "Semoga Hari Mu Menyenangkan",
+  "Have a Nice Day!",
+];
 var currentTextIndex = 0;
 var typedText = "";
 
@@ -20,7 +29,7 @@ function typeText() {
   if (typedText.length < textToType[currentTextIndex].length) {
     typedText += textToType[currentTextIndex].charAt(typedText.length);
     $("#typed-text").text(typedText);
-    setTimeout(typeText, 100);
+    setTimeout(typeText, 150);
   } else {
     currentTextIndex = (currentTextIndex + 1) % textToType.length;
     typedText = "";
