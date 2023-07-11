@@ -14,7 +14,7 @@ function playSpeech() {
 // Typing Text
 var textToType = [
   "Selamat Datang Di Virtual Speech",
-  "Websitenya Untuk Mengubah Teks Menjadi Virtual Speech",
+  "Ubah Sebuah Teks Menjadi Virtual Speech",
   "Welcome to Virtual Speech",
   "A Website for Converting Text into Virtual Speech",
   "Gunakanlah Website Ini Dengan Sebijaknya!",

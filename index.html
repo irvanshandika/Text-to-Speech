@@ -19,7 +19,7 @@
     <meta name="twitter:title" content="Virtual Speech: Ubah Text Mu Menjadi Suara Virtual" />
     <meta name="twitter:description" content="Ubah Text Yang Kamu Inginkan Menjadi Suara Secara Virtual Untuk Membantu Kamu Belajar Aksen Dari Berbagai Bahasa" />
     <meta name="twitter:image" content="" />
-    <title>Virtual Speech: Ubah Text Mu Menjadi Suara Virtual</title>
+    <title>Virtual Speech: Ubah Teks Mu Menjadi Suara Virtual</title>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="./src/style/style.css" />
@@ -31,7 +31,7 @@
         <div class="h-10 w-80 lg:w-[510px] bg-gray-200 rounded-sm overflow-hidden">
           <div class="h-full w-1 bg-blue-500"></div>
         </div>
-        <p id="typed-text" class="absolute left-0 top-0 text-lg text-blue-500 font-medium mt-2 ml-2"></p>
+        <p id="typed-text" class="absolute left-0 top-0 lg:text-lg text-blue-500 font-medium mt-2 ml-2 text-sm"></p>
       </div>
       <div class="flex flex-col items-center">
         <select id="language" class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white font-Quicksand border-solid mb-3 px-3 py-2 lg:w-[510px] w-[320px] rounded-sm" onchange="changeLanguage()">
@@ -44,7 +44,7 @@
           <option value="ko">한국어 (Korea)</option>
           <option value="ja">日本語 (Japan)</option>
         </select>
-        <textarea id="message" type="text" class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white border-solid mb-3 px-3 py-2 rounded-sm w-full lg:max-w-lg font-Quicksand" placeholder="Type your message"></textarea>
+        <textarea id="message" type="text" rows="4" class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white border-solid mb-3 px-3 py-2 rounded-md w-full lg:max-w-lg font-Quicksand" placeholder="Type your message"></textarea>
         <button onclick="playSpeech()" class="bg-blue-500 hover:bg-blue-400 px-10 py-2 rounded-sm text-white mt-3">
           Play <span class="ml-2"><i class="fa-sharp fa-solid fa-play"></i></span>
         </button>
@@ -70,8 +70,7 @@
           </svg>
           <span class="sr-only">Info</span>
           <div>
-            <span class="font-medium font-Quicksand">Success alert!</span>
-            Kalimat Sudah Tersalin
+            <span class="font-medium font-Quicksand">Teks Berhasil Disalin!</span>
           </div>
         </div>
       </div>
