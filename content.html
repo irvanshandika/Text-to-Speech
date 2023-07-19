@@ -50,9 +50,9 @@
           rows="4"
           class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white border-solid mb-3 px-3 py-2 rounded-md w-full lg:max-w-lg font-Quicksand"
           placeholder="Type your message"></textarea>
-        <button onclick="playSpeech()" class="bg-blue-500 hover:bg-blue-400 px-10 py-2 rounded-sm text-white mt-3">
-          Play <span class="ml-2"><i class="fa-sharp fa-solid fa-play"></i></span>
-        </button>
+        <div class="lg:w-[100px] w-[100px] cursor-pointer" onclick="playSpeech()" type="button">
+          <lottie-player src="https://lottie.host/da1b76b6-26e9-4459-8838-b7190514b367/mmMubFtkJw.json" background="transparent" speed="1" style="width: 100%; height: 100%" loop autoplay />
+        </div>
       </div>
       <div class="flex gap-2 mb-4 mt-7">
         <select id="bahasa" class="custom-select bg-[#068FFF] hover:bg-[#78C1F3] text-white px-3 py-1 rounded-sm lg:w-[407px] w-[216px]">
@@ -85,9 +85,19 @@
           type="text"
           id="output"
           readonly
-          class="mt-4 py-2 px-4 w-64 lg:w-[445px] text-black bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+          class="mt-4 py-2 px-4 w-64 lg:w-[510px] text-black bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
           placeholder="Hasil Generate Akan Ditampilkan Disini" />
-        <button onclick="copyKalimat()" class="py-2 px-4 mt-3 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">Copy</button>
+        <div class="flex items-center mt-4">
+          <button onclick="copyKalimat()" class="flex items-center py-2 px-4 mt-3 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
+            <span class="mr-2">
+              <svg viewBox="0 0 467 512.22" xmlns="http://www.w3.org/2000/svg" class="fill-current h-3 w-3">
+                <path
+                  d="M131.07 372.11c.37 1 .57 2.08.57 3.2 0 1.13-.2 2.21-.57 3.21v75.91c0 10.74 4.41 20.53 11.5 27.62s16.87 11.49 27.62 11.49h239.02c10.75 0 20.53-4.4 27.62-11.49s11.49-16.88 11.49-27.62V152.42c0-10.55-4.21-20.15-11.02-27.18l-.47-.43c-7.09-7.09-16.87-11.5-27.62-11.5H170.19c-10.75 0-20.53 4.41-27.62 11.5s-11.5 16.87-11.5 27.61v219.69zm-18.67 12.54H57.23c-15.82 0-30.1-6.58-40.45-17.11C6.41 356.97 0 342.4 0 326.52V57.79c0-15.86 6.5-30.3 16.97-40.78l.04-.04C27.51 6.49 41.94 0 57.79 0h243.63c15.87 0 30.3 6.51 40.77 16.98l.03.03c10.48 10.48 16.99 24.93 16.99 40.78v36.85h50c15.9 0 30.36 6.5 40.82 16.96l.54.58c10.15 10.44 16.43 24.66 16.43 40.24v302.01c0 15.9-6.5 30.36-16.96 40.82-10.47 10.47-24.93 16.97-40.83 16.97H170.19c-15.9 0-30.35-6.5-40.82-16.97-10.47-10.46-16.97-24.92-16.97-40.82v-69.78zM340.54 94.64V57.79c0-10.74-4.41-20.53-11.5-27.63-7.09-7.08-16.86-11.48-27.62-11.48H57.79c-10.78 0-20.56 4.38-27.62 11.45l-.04.04c-7.06 7.06-11.45 16.84-11.45 27.62v268.73c0 10.86 4.34 20.79 11.38 27.97 6.95 7.07 16.54 11.49 27.17 11.49h55.17V152.42c0-15.9 6.5-30.35 16.97-40.82 10.47-10.47 24.92-16.96 40.82-16.96h170.35z" />
+              </svg>
+            </span>
+            Copy
+          </button>
+        </div>
       </div>
     </div>
     <!-- script -->
