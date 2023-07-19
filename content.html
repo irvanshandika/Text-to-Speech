@@ -26,15 +26,24 @@
     <link rel="stylesheet" href="./dist/output.css" />
   </head>
   <body class="bg:white dark:bg-gray-700">
-    <div class="flex flex-col items-center mt-7">
-      <div class="relative mb-4">
-        <div class="h-10 w-80 lg:w-[510px] bg-gray-200 rounded-sm overflow-hidden">
-          <div class="h-full w-1 bg-blue-500"></div>
-        </div>
-        <p id="typed-text" class="absolute left-0 top-0 lg:text-lg text-blue-500 font-medium mt-2 ml-2 text-sm"></p>
+    <div class="flex flex-col items-center mt-7 mb-7">
+      <div class="box bg-gray-600 text-gray-300 dark:bg-white dark:text-gray-700 text-sm leading-5 tracking-wide mx-auto mb-4 p-4 relative cursor-pointer text-center uppercase transition-all duration-150">
+        <p class="box-message" id="typed-text" data-dead-message="Oh noes!"></p>
+        <div class="arrow-down absolute left-1/2 transform -translate-x-1/2 bottom-0 w-0 h-0 border-t-4 border-transparent border-solid"></div>
       </div>
+
+      <div class="robot flex items-center justify-center rounded-full relative overflow-hidden mx-auto">
+        <div class="relative lg:w-40 lg:h-40 w-24 h-24">
+          <lottie-player src="https://lottie.host/5a0c7583-773c-4566-b9bf-8fc8f73f3656/3FPJGs819A.json" background="transparent" speed="1" style="width: 100%; height: 100%" loop autoplay />
+        </div>
+        <div class="w-4.5em h-1.5em absolute rounded-full bg-green-700 left-1/2 transform -translate-x-1/2 bottom-4 transition-all duration-100"></div>
+      </div>
+
       <div class="flex flex-col items-center">
-        <select id="language" class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white font-Quicksand border-solid mb-3 px-3 py-2 lg:w-[510px] w-[320px] rounded-sm" onchange="changeLanguage()">
+        <select
+          id="language"
+          class="bg-gray-500 hover:bg-gray-600 text-white border-black placeholder-white font-Quicksand border-solid mb-3 px-3 py-2 lg:w-[510px] w-[320px] rounded-sm dark:bg-white dark:hover:bg-gray-200 dark:text-gray-700"
+          onchange="changeLanguage()">
           <option>Pilih Bahasa</option>
           <option value="id">Bahasa Indonesia</option>
           <option value="en">English</option>
@@ -48,14 +57,14 @@
           id="message"
           type="text"
           rows="4"
-          class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white border-solid mb-3 px-3 py-2 rounded-md w-full lg:max-w-lg font-Quicksand"
+          class="bg-gray-500 hover:bg-gray-600 text-white border-black placeholder-white border-solid mb-3 px-3 py-2 rounded-md w-full lg:max-w-lg font-Quicksand dark:bg-white dark:hover:bg-gray-200 dark:text-gray-700 dark:placeholder-gray-700"
           placeholder="Type your message"></textarea>
         <div class="lg:w-[100px] w-[100px] cursor-pointer" onclick="playSpeech()" type="button">
           <lottie-player src="https://lottie.host/da1b76b6-26e9-4459-8838-b7190514b367/mmMubFtkJw.json" background="transparent" speed="1" style="width: 100%; height: 100%" loop autoplay />
         </div>
       </div>
       <div class="flex gap-2 mb-4 mt-7">
-        <select id="bahasa" class="custom-select bg-[#068FFF] hover:bg-[#78C1F3] text-white px-3 py-1 rounded-sm lg:w-[407px] w-[216px]">
+        <select id="bahasa" class="custom-select bg-gray-500 hover:bg-gray-600 text-white border-black placeholder-white px-3 py-1 rounded-sm lg:w-[407px] w-[216px] dark:bg-white dark:hover:bg-gray-200 dark:text-gray-700">
           <option value="">Pilih Bahasa</option>
           <option value="indonesia">Indonesia</option>
           <option value="english">English</option>
@@ -85,7 +94,7 @@
           type="text"
           id="output"
           readonly
-          class="mt-4 py-2 px-4 w-64 lg:w-[510px] text-black bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+          class="mt-4 py-2 px-4 w-[322px] lg:w-[510px] text-black bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
           placeholder="Hasil Generate Akan Ditampilkan Disini" />
         <div class="flex items-center mt-4">
           <button onclick="copyKalimat()" class="flex items-center py-2 px-4 mt-3 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
