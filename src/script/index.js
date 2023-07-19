@@ -115,3 +115,47 @@ function copyKalimat() {
     alertDiv.classList.add("hidden");
   }, 4000);
 }
+// Switch mode
+const lightModeBtn = document.getElementById("lightModeBtn");
+const darkModeBtn = document.getElementById("darkModeBtn");
+const systemModeBtn = document.getElementById("systemModeBtn");
+const contentDiv = document.getElementById("content");
+
+// Cek mode yang disimpan pada local storage saat memuat halaman
+const currentMode = localStorage.getItem("mode");
+if (currentMode) {
+  document.documentElement.setAttribute("data-theme", currentMode);
+  if (currentMode === "dark") {
+    darkMode();
+  } else if (currentMode === "system") {
+    systemMode();
+  }
+}
+
+// Fungsi untuk mengaktifkan light mode
+function lightMode() {
+  document.documentElement.setAttribute("data-theme", "light");
+  contentDiv.classList.remove("dark-mode", "system-mode");
+  localStorage.setItem("mode", "light");
+}
+
+// Fungsi untuk mengaktifkan dark mode
+function darkMode() {
+  document.documentElement.setAttribute("data-theme", "dark");
+  contentDiv.classList.remove("system-mode");
+  contentDiv.classList.add("dark-mode");
+  localStorage.setItem("mode", "dark");
+}
+
+// Fungsi untuk mengaktifkan mode sistem
+function systemMode() {
+  document.documentElement.setAttribute("data-theme", "system");
+  contentDiv.classList.remove("dark-mode");
+  contentDiv.classList.add("system-mode");
+  localStorage.setItem("mode", "system");
+}
+
+// Tambahkan event listener untuk tombol-tombol
+lightModeBtn.addEventListener("click", lightMode);
+darkModeBtn.addEventListener("click", darkMode);
+systemModeBtn.addEventListener("click", systemMode);
