@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ubah Text Yang Kamu Inginkan Menjadi Suara Secara Virtual Untuk Membantu Kamu Belajar Aksen Dari Berbagai Bahasa" />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://speech-text-ai.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Virtual Speech: Ubah Text Mu Menjadi Suara Virtual" />
+    <meta property="og:description" content="Ubah Text Yang Kamu Inginkan Menjadi Suara Secara Virtual Untuk Membantu Kamu Belajar Aksen Dari Berbagai Bahasa" />
+    <meta property="og:image" content="" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="speech-text-ai.vercel.app" />
+    <meta property="twitter:url" content="https://speech-text-ai.vercel.app/" />
+    <meta name="twitter:title" content="Virtual Speech: Ubah Text Mu Menjadi Suara Virtual" />
+    <meta name="twitter:description" content="Ubah Text Yang Kamu Inginkan Menjadi Suara Secara Virtual Untuk Membantu Kamu Belajar Aksen Dari Berbagai Bahasa" />
+    <meta name="twitter:image" content="" />
+    <title>Virtual Speech: Ubah Teks Mu Menjadi Suara Virtual</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="./src/style/style.css" />
+    <link rel="stylesheet" href="./dist/output.css" />
+  </head>
+  <body class="bg:white dark:bg-gray-700">
+    <div class="flex flex-col items-center mt-7">
+      <div class="relative mb-4">
+        <div class="h-10 w-80 lg:w-[510px] bg-gray-200 rounded-sm overflow-hidden">
+          <div class="h-full w-1 bg-blue-500"></div>
+        </div>
+      </div>
+      <div class="flex flex-col items-center">
+        <select id="language" class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white font-Quicksand border-solid mb-3 px-3 py-2 lg:w-[510px] w-[320px] rounded-sm" onchange="changeLanguage()">
+          <option>Pilih Bahasa</option>
+          <option value="id">Bahasa Indonesia</option>
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+          <option value="zh">中文 (China)</option>
+          <option value="ko">한국어 (Korea)</option>
+          <option value="ja">日本語 (Japan)</option>
+        </select>
+        <textarea
+          id="message"
+          type="text"
+          rows="4"
+          class="bg-blue-500 hover:bg-blue-400 text-white border-black placeholder-white border-solid mb-3 px-3 py-2 rounded-md w-full lg:max-w-lg font-Quicksand"
+          placeholder="Type your message"></textarea>
+        <button onclick="playSpeech()" class="bg-blue-500 hover:bg-blue-400 px-10 py-2 rounded-sm text-white mt-3">
+          Play <span class="ml-2"><i class="fa-sharp fa-solid fa-play"></i></span>
+        </button>
+      </div>
+      <div class="flex gap-2 mb-4 mt-7">
+        <select id="bahasa" class="custom-select bg-[#068FFF] hover:bg-[#78C1F3] text-white px-3 py-1 rounded-sm lg:w-[407px] w-[216px]">
+          <option value="">Pilih Bahasa</option>
+          <option value="indonesia">Indonesia</option>
+          <option value="english">English</option>
+          <option value="français">Français</option>
+          <option value="deutsch">Deutsch</option>
+          <option value="chinese">中文</option>
+          <option value="korean">한국어</option>
+          <option value="japanese">日本語</option>
+        </select>
+        <button onclick="generateKalimat()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Generate</button>
+      </div>
+      <!-- Alert -->
+      <div class="w-[335px] lg:w-[510px] hidden" id="alert">
+        <div class="flex items-center p-4 mt-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+          <svg class="flex-shrink-0 inline w-4 h-4 mr-3" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+          </svg>
+          <span class="sr-only">Info</span>
+          <div>
+            <span class="font-medium font-Quicksand">Teks Berhasil Disalin!</span>
+          </div>
+        </div>
+      </div>
+      <!-- Akhir Alert -->
+      <div class="flex-row">
+        <input
+          type="text"
+          id="output"
+          readonly
+          class="mt-4 py-2 px-4 w-64 lg:w-[445px] text-black bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+          placeholder="Hasil Generate Akan Ditampilkan Disini" />
+        <button onclick="copyKalimat()" class="py-2 px-4 mt-3 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">Copy</button>
+      </div>
+    </div>
+    <!-- script -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.0/lottie.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./src/script/index.js"></script>
+  </body>
+</html>
