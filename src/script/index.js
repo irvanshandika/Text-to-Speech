@@ -12,16 +12,7 @@ function playSpeech() {
 }
 
 // Typing Text
-var textToType = [
-  "Selamat Datang Di Virtual Speech",
-  "Ubah Sebuah Teks Menjadi Virtual Speech",
-  "Welcome to Virtual Speech",
-  "A Website for Converting Text into Virtual Speech",
-  "Gunakanlah Website Ini Dengan Sebijaknya!",
-  "Use these websites wisely!",
-  "Semoga Hari Mu Menyenangkan",
-  "Have a Nice Day!",
-];
+var textToType = ["Selamat Datang Di Virtual Speech", "Welcome to Virtual Speech", "Semoga Hari Mu Menyenangkan", "Have a Nice Day!"];
 var currentTextIndex = 0;
 var typedText = "";
 
